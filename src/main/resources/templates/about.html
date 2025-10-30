@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ChatSphere</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+            background-size: 300% 300%;
+            animation: gradientBG 8s ease infinite;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar-custom {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .back-btn {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            color: #FFD700;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-title {
+            color: #A19AD3;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .about-icon {
+            font-size: 3rem;
+            color: #A19AD3;
+            margin-bottom: 20px;
+        }
+
+        .feature-section {
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #A19AD3;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #A19AD3;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            color: #A19AD3;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            background: linear-gradient(135deg, #A19AD3, #FF8383);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .usage-steps {
+            margin: 30px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(161, 154, 211, 0.1);
+            border-radius: 10px;
+        }
+
+        .step-number {
+            background: #A19AD3;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .rules-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .rules-title {
+            color: #856404;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .rule-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .rule-item:before {
+            content: "•";
+            color: #856404;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #FFF;
+            padding: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#">
+        <i class="fas fa-comments me-2"></i>
+        ChatSphere
+    </a>
+    <a th:href="@{/login}" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Login
+    </a>
+</nav>
+
+<div class="about-container">
+    <div class="about-header">
+        <i class="fas fa-info-circle about-icon"></i>
+        <h1 class="about-title">About ChatSphere</h1>
+        <p class="lead">Your Modern Real-Time Chat Application</p>
+    </div>
+
+    <div class="feature-section">
+        <h3 class="feature-title"><i class="fas fa-star me-2"></i>What is ChatSphere?</h3>
+        <p>ChatSphere is a cutting-edge real-time chat application designed to bring people together through seamless and secure communication. Our platform offers an intuitive environment for instant messaging with friends, family, and colleagues.</p>
+    </div>
+
+    <div class="feature-section">
+        <h3 class="feature-title"><i class="fas fa-bolt me-2"></i>Key Features</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h5>Real-time Messaging</h5>
+                    <p>Instant message delivery with live updates and no refresh required</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h5>User Presence</h5>
+                    <p>See who's online and available to chat in real-time</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h5>Secure Authentication</h5>
+                    <p>Protected user accounts with secure login system</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h5>Responsive Design</h5>
+                    <p>Works perfectly on desktop, tablet, and mobile devices</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="usage-steps">
+        <h3 class="feature-title"><i class="fas fa-play-circle me-2"></i>How to Use ChatSphere</h3>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div>
+                <h5>Register/Login</h5>
+                <p>Create your account or login with existing credentials to access the chat platform</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div>
+                <h5>Find Users</h5>
+                <p>Browse the online users list to see who's available for chatting</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div>
+                <h5>Start Chatting</h5>
+                <p>Click on any user to start a private conversation</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <div>
+                <h5>Send Messages</h5>
+                <p>Type your message and hit send - it's that simple!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tech-stack">
+        <h3 class="text-white"><i class="fas fa-code me-2"></i>Technology Stack</h3>
+        <div class="row text-white">
+            <div class="col-md-4">
+                <h5>Frontend</h5>
+                <p>HTML5, CSS3, JavaScript, Bootstrap 5, Font Awesome</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Backend</h5>
+                <p>Spring Boot, WebSocket (STOMP), SockJS</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Real-time</h5>
+                <p>WebSocket protocol for instant messaging</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rules-section">
+        <h3 class="rules-title"><i class="fas fa-exclamation-triangle me-2"></i>Community Guidelines</h3>
+        <div class="rule-item">Be respectful and courteous to all users</div>
+        <div class="rule-item">Do not share inappropriate or offensive content</div>
+        <div class="rule-item">Protect your personal information and privacy</div>
+        <div class="rule-item">Report any suspicious activity to administrators</div>
+        <div class="rule-item">Use the platform for positive and constructive communication</div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a th:href="@{/login}" class="btn btn-primary btn-lg">
+            <i class="fas fa-sign-in-alt me-2"></i>
+            Get Started with ChatSphere
+        </a>
+    </div>
+</div>
+
+
+</body>
+</html>
