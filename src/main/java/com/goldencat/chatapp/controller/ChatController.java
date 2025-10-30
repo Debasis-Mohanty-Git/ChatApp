@@ -3,7 +3,6 @@ package com.goldencat.chatapp.controller;
 import com.goldencat.chatapp.model.Message;
 import com.goldencat.chatapp.model.Notification;
 import com.goldencat.chatapp.service.MessageService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
